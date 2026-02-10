@@ -1,3 +1,5 @@
-export function sayHelloWorld(world: string) {
-  return `Hello ${world}`;
-}
+export {
+  type ConfirmInputProps,
+  type ConfirmInputDefaultChoice,
+  ConfirmInput,
+} from "./components/ConfirmInput.js";

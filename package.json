@@ -1,25 +1,23 @@
 {
-  "name": "tinky",
+  "name": "tinky-confirm-input",
   "version": "0.1.0",
-  "description": "React for CLIs, re-imagined with the Taffy engine",
+  "description": "Confirm input component for tinky CLI apps",
   "keywords": [
+    "tinky",
     "react",
-    "ink",
-    "taffy",
     "cli",
     "terminal",
-    "layout-engine",
-    "flexbox",
-    "grid",
-    "renderer"
+    "confirm",
+    "input",
+    "prompt"
   ],
-  "homepage": "https://github.com/ByteLandTechnology/tinky#readme",
+  "homepage": "https://github.com/ByteLandTechnology/tinky-confirm-input#readme",
   "bugs": {
-    "url": "https://github.com/ByteLandTechnology/tinky/issues"
+    "url": "https://github.com/ByteLandTechnology/tinky-confirm-input/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ByteLandTechnology/tinky.git"
+    "url": "git+https://github.com/ByteLandTechnology/tinky-confirm-input.git"
   },
   "license": "MIT",
   "author": {
@@ -28,18 +26,20 @@
   "type": "module",
   "main": "./lib/index.js",
   "scripts": {
-    "test": "tsc",
-    "build": "tsc && npm run docs",
-    "lint": "eslint src",
-    "prepublish": "npm run build",
+    "test": "vitest run --coverage",
+    "build": "tsc && bun run docs",
+    "lint": "eslint src tests",
+    "prepublish": "bun run build",
     "prepare": "husky",
     "docs": "typedoc --plugin typedoc-plugin-markdown --disableSources --out docs/api && prettier --write docs/api"
   },
   "files": [
-    "./bin/*",
     "./lib/*"
   ],
   "typings": "./lib/index.d.ts",
+  "dependencies": {
+    "tinky-theme": "^1.0.1"
+  },
   "devDependencies": {
     "@commitlint/cli": "^20.3.0",
     "@commitlint/config-conventional": "^20.3.0",
@@ -49,17 +49,20 @@
     "@semantic-release/github": "^12.0.2",
     "@semantic-release/npm": "^13.1.3",
     "@semantic-release/release-notes-generator": "^14.1.0",
+    "@vitest/coverage-v8": "4.0.18",
     "conventional-changelog-conventionalcommits": "^9.1.0",
+    "delay": "^6.0.0",
     "eslint": "^9.39.2",
     "eslint-plugin-react": "^7.37.5",
     "husky": "^9.1.7",
-    "jiti": "^2.6.1",
     "lint-staged": "^16.2.7",
     "prettier": "^3.7.4",
     "semantic-release": "^25.0.2",
+    "tinky-test": "^1.0.0",
     "typedoc": "^0.28.16",
     "typedoc-plugin-markdown": "^4.9.0",
-    "typescript-eslint": "^8.54.0"
+    "typescript-eslint": "^8.54.0",
+    "vitest": "^4.0.18"
   },
   "commitlint": {
     "extends": [

@@ -1,3 +1,7 @@
+**tinky-confirm-input**
+
+---
+
 # tinky-confirm-input
 
 A confirmation input component for [tinky](https://github.com/ByteLandTechnology/tinky) applications. This component provides a simple "Y/n" or "y/N" prompt to handle user confirmation for critical actions.
